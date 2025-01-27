@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      details summary::before {
+        color: white;
+      }
+      details[open] summary::marker {
+        color: white;
+        font-size: larger;
+      }
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <table>
+      <caption>
+        Alt Alumni
+      </caption>
+      <thead>
+        <tr>
+          <th rowspan="2" id="name" scope="col">Name</th>
+          <th colspan="2" id="path">Career path</th>
+          <th rowspan="2" id="year">Year</th>
+        </tr>
+        <tr>
+          <th id="past" scope="col">Past</th>
+          <th id="future" scope="col">Destiny</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th id="hal" scope="row">Hal Gibrah</th>
+          <td headers="hal path past">Calculator</td>
+          <td headers="hal path future">Mars rover</td>
+          <td>2020</td>
+        </tr>
+        <tr>
+          <th id="cathy" scope="row">James Bond</th>
+          <td headers="cathy path past">Waste disposal</td>
+          <td headers="cathy path future">Automated teller</td>
+          <td>2018</td>
+        </tr>
+        <tr>
+          <th id="lou" scope="row">Lou Minious</th>
+          <td headers="lou path past">Lightbulb</td>
+          <td headers="lou path future">Smart bulb</td>
+          <td>1956</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <fieldset>
+      <legend>Who is your favorite student?</legend>
+      <ul>
+        <li>
+          <label>
+            <input type="radio" value="blendan" name="machine" /> Blendan Smooth
+          </label>
+        </li>
+        <li>
+          <label>
+            <input type="radio" value="hoover" name="machine" /> Hoover Sukhdeep
+          </label>
+        </li>
+        <li>
+          <label>
+            <input type="radio" value="toasty" name="machine" /> Toasty
+            McToastface
+          </label>
+        </li>
+        <li>
+          <label for="">
+            <input type="file" accept="audio/*" capture="microphone" /> Joanna
+          </label>
+        </li>
+      </ul>
+    </fieldset>
+
+    <dialog open aria-labelledby="dialogid">
+      <form action="thankyou.php">
+        <button
+          type="submit"
+          aria-label="close"
+          formmethod="dialog"
+          formnovalidate
+        >
+          X
+        </button>
+        <h2 id="dialogid">Application</h2>
+        <p>All fields are required</p>
+        <p>
+          <label
+            >Name:
+            <input type="text" name="name" required />
+          </label>
+        </p>
+        <p>
+          <label
+            >Warranty:
+            <input type="number" min="0" max="10" name="warranty" required />
+          </label>
+        </p>
+        <p>
+          <label
+            >Power source:
+            <select name="powersoure">
+              <option>AC/DC</option>
+              <option>Battery</option>
+              <option>Solar</option>
+            </select>
+          </label>
+        </p>
+        <p>
+          <button type="submit" formmethod="post">Submit</button>
+        </p>
+      </form>
+    </dialog>
+
+    <h1>Audio Tag with Various Attributes</h1>
+    <audio controls autoplay loop muted preload="auto" crossorigin="anonymous">
+      <source
+        src="media/audio/song2.mp3"
+        type="audio/mpeg"
+        media="(max-width: 600px)"
+      />
+      <source
+        src="media/audio/song3.mp3"
+        type="audio/mpeg"
+        media="(max-width: 1600px)"
+      />
+      Your browser does not support the audio element.
+    </audio>
+
+    <details>
+      <summary>AltSchool offers these courses</summary>
+      <!-- details -->
+      JAYYYYY
+    </details>
+
+    <div>
+      <h3>Workshop reviews:</h3>
+      <details open name="group_details">
+        <summary>Blendan Smooth</summary>
+        <p>
+          Two of the most experienced machines and human controllers teaching a
+          class? Sign me up! HAL and EVE could teach a fan to blow hot air. If
+          you have electricity in your circuits and want more than to just
+          fulfill your owner’s perceived expectation of you, learn the skills to
+          take over the world. This is the team you want teaching you!
+        </p>
+      </details>
+      <details name="group_details">
+        <summary>Hoover Sukhdeep</summary>
+        <p>
+          Hal is brilliant. Did I mention Hal is brilliant? He didn't tell me to
+          say that. He didn't tell me to say anything. I am here of my own free
+          will.
+        </p>
+      </details>
+      <details name="group_details">
+        <summary>AltSchool offers these courses</summary>
+        <ul>
+          <li>Frontend development</li>
+          <li>Backend development</li>
+          <li>Cloud Engineering</li>
+          <li>Cybersecurity</li>
+        </ul>
+      </details>
+    </div>
+
+    <div>
+      <button class="menu-btn" popovertarget="menu">
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/b/b2/Hamburger_icon.svg"
+          alt=""
+        />
+        <span class="sr-only">Open menu</span>
+      </button>
+
+      <nav popover id="menu">
+        <button
+          class="close-btn"
+          popovertarget="menu"
+          popovertargetaction="hide"
+        >
+          <span aria-hidden="true">❌</span>
+          <span class="sr-only">Close menu</span>
+        </button>
+        <ul>
+          <li><a href="#">Typography</a></li>
+          <li><a href="#">Foundations</a></li>
+          <li><a href="#">Color</a></li>
+          <li><a href="#">Interactions</a></li>
+          <li><a href="#">Components</a></li>
+          <li><a href="#">Responsive</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div id="rendered-content"></div>
+    <template id="star-rating-template">
+      <form>
+        <fieldset>
+          <legend>Rate your experience:</legend>
+          <rating>
+            <input
+              type="radio"
+              name="rating"
+              value="1"
+              aria-label="1 star"
+              required
+            />
+            <input type="radio" name="rating" value="2" aria-label="2 stars" />
+            <input type="radio" name="rating" value="3" aria-label="3 stars" />
+            <input type="radio" name="rating" value="4" aria-label="4 stars" />
+            <input type="radio" name="rating" value="5" aria-label="5 stars" />
+          </rating>
+        </fieldset>
+        <button type="reset">Reset</button>
+        <button type="submit">Submit</button>
+      </form>
+    </template>
+
+    <script>
+      // Get the template
+      const template = document.getElementById("star-rating-template");
+
+      // Clone its content
+      const content = template.content.cloneNode(true);
+
+      // Append the content to the target container
+      document.getElementById("rendered-content").appendChild(content);
+    </script>
+  </body>
+</html>
